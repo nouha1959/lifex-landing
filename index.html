@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LifeX — Life is longevity, life is health, life is wellness and community</title>
 <!-- LifeX landing page — live on GitHub Pages.
-     Built Nov 11, 2026 at Nicole's direction after she purchased lifex.now.
-     LifeX is in development: nothing to buy or join yet beyond following
-     along on the social profiles. No forms, no sign-ups, no prices here. -->
+     Rebuilt Nov 11, 2026 in the full tryregenesys.com layout at Nicole's
+     direction. LifeX is in development: nothing to buy or join yet beyond
+     following along. Forms submit via FormSubmit to Nicole's Gmail;
+     raw answers are never written to GitHub. -->
 <style>
   body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:24px;line-height:1.55;color:#1a1a1a}
   h1{font-size:2rem;line-height:1.2} h2{margin-top:2rem}
@@ -16,36 +17,183 @@
   .btn.secondary{background:#fff;color:#0b6b4a;border:2px solid #0b6b4a}
   .note{background:#fff8e1;padding:16px;border-radius:8px}
   .dream{background:#eef6f1;border:2px dashed #0b6b4a;padding:20px;border-radius:12px;margin-top:2rem}
+  /* Tabs */
+  .tabs{margin-top:2rem}
+  .tabbar{display:flex;gap:8px;border-bottom:3px solid #0b6b4a}
+  .tabbtn{flex:1;background:#e7e7e7;border:none;border-radius:10px 10px 0 0;padding:14px 10px;font-size:1.05rem;font-weight:700;cursor:pointer;color:#333}
+  .tabbtn.active{background:#0b6b4a;color:#fff}
+  .tabbtn small{display:block;font-weight:400;font-size:.8rem}
+  .panel{border:2px solid #0b6b4a;border-top:none;padding:20px;border-radius:0 0 12px 12px}
+  .panel[hidden]{display:none}
+  iframe{width:100%;border:none;border-radius:8px;background:#fff}
+  footer{margin-top:2rem;font-size:.9rem;color:#555}
+  /* Forms */
+  label{display:block;font-weight:600;margin-top:1rem}
+  label.check{font-weight:400;margin-top:.4rem}
+  input[type="text"],input[type="email"],textarea{width:100%;box-sizing:border-box;padding:10px;border:2px solid #ccc;border-radius:8px;margin-top:.3rem;font:inherit}
+  textarea{min-height:90px}
+  .formmsg{margin-top:1rem;font-weight:600}
+  button.btn{border:none;cursor:pointer;font:inherit}
 </style>
 </head>
 <body>
   <p class="note"><strong>Analytics notice:</strong> We record anonymous visit analytics for lifex.now in real time — pages viewed and where visitors arrive from — so we can learn what people find useful and improve LifeX as we build it. No names or personal details are collected on this page.</p>
 
-  <div class="hero">
-    <h1>LifeX 🌿</h1>
-    <p><strong>Life is longevity, life is health, life is wellness and community — this is the culture, this is the life, LifeX.</strong></p>
-    <p>LifeX is being built as a home for longevity, health &amp; wellness: a social network, community, and marketplace where real people share their journeys — and help shape what gets built.</p>
+<section class="hero">
+  <h1>LifeX 🌿</h1>
+  <p><strong>Life is longevity, life is health, life is wellness and community — this is the culture, this is the life, LifeX.</strong></p>
+  <p>LifeX is being built as the longevity, health and wellness social network, community, and marketplace — a place where people share their health journeys, swap cooking tips, and share honest product and service experiences, and where brands, vendors, and creators meet the people they serve on the same platform and actually listen.</p>
+  <p>LifeX is for adults of all ages, backgrounds, and sizes — wherever you are in life, you can start here.</p>
+  <p><strong>We're in development — nothing to buy or join yet beyond following along.</strong></p>
+  <p>
+    <a class="btn" href="https://www.instagram.com/lifexcommunity/">Follow on Instagram</a>
+    <a class="btn secondary" href="https://www.threads.com/@lifexcommunity">Follow on Threads</a>
+  </p>
+</section>
+
+<h2>Sound familiar?</h2>
+<ul>
+  <li>Your health groups are scattered across five different apps — and none of them talk to each other</li>
+  <li>Plenty of motivation on day one, then no follow-through from anyone</li>
+  <li>Feeling like a number in a feed, not a person in a community</li>
+  <li>Products pushed at you constantly, with nobody actually listening</li>
+  <li>Influencers selling — with no honest feedback from real people</li>
+  <li>It's hard to find people who are on the same road as you</li>
+</ul>
+
+<h2>We're building it differently</h2>
+<ul>
+  <li>One home for journeys, cooking tips, and honest product experiences</li>
+  <li>Brands that actually listen — and hear feedback from real people, not just sales numbers</li>
+  <li>A real community, not an audience — people supporting people</li>
+  <li>Members help shape what gets built, from the very beginning</li>
+</ul>
+
+<section class="dream">
+  <h2 style="margin-top:0">What would YOUR dream health &amp; wellness community do differently?</h2>
+  <p>That's not a slogan — we actually want your answer, in your own words. There's a community questionnaire in Tab 2 below, built entirely around questions like this. What you write helps decide what we build first.</p>
+  <a class="btn" href="#signup" onclick="showTab('questionnaire')">Answer in the questionnaire ↓</a>
+</section>
+
+<h2>How pre-launch works</h2>
+<ol>
+  <li>Follow along or leave your email to be notified (Tab 1 below)</li>
+  <li>Help design it — optional community questionnaire (Tab 2 below)</li>
+  <li>Founding-member updates</li>
+  <li>Early access when LifeX opens</li>
+</ol>
+
+<!-- ============ SIGNUP TABS ============ -->
+<section class="tabs" id="signup">
+  <div class="tabbar" role="tablist">
+    <button class="tabbtn active" id="tabbtn-waitlist" onclick="showTab('waitlist')">Follow LifeX<small>Get notified when LifeX opens</small></button>
+    <button class="tabbtn" id="tabbtn-questionnaire" onclick="showTab('questionnaire')">Community questionnaire<small>Optional — about 3 minutes</small></button>
+  </div>
+
+  <div class="panel" id="panel-waitlist" role="tabpanel">
+    <h2 style="margin-top:0">Follow LifeX</h2>
+    <p>Leave your email and we'll let you know when LifeX opens. First name is optional — email is all we need. Following along does <em>not</em> require the questionnaire.</p>
+    <form id="notify-form">
+      <label for="notify-firstname">First name (optional)</label>
+      <input type="text" id="notify-firstname" name="first_name" autocomplete="given-name">
+      <label for="notify-email">Email *</label>
+      <input type="email" id="notify-email" name="email" required autocomplete="email">
+      <p><button type="submit" class="btn">Notify me when LifeX opens</button></p>
+      <p class="formmsg" id="notify-msg" role="status"></p>
+    </form>
+    <p><strong>Follow along today:</strong></p>
     <p>
       <a class="btn" href="https://www.instagram.com/lifexcommunity/">Follow on Instagram</a>
       <a class="btn secondary" href="https://www.threads.com/@lifexcommunity">Follow on Threads</a>
     </p>
+    <p><strong>Want a say in how we build it?</strong> Switch to the <a href="#signup" onclick="showTab('questionnaire')">Community questionnaire tab</a> above — it's optional, and following does not require it.</p>
   </div>
 
-  <h2>What LifeX will be</h2>
-  <p>A place to post videos of your longevity, health, and wellness journey, swap cooking tips, and show how the products and services you use actually affect your life. Brands and vendors will be there too — engaging with their audience, showcasing what they offer, and hearing honest feedback from real people, not just influencers.</p>
-  <p>Health creators will be able to share what works for them and get genuine feedback from like-minded people on the same road.</p>
+  <div class="panel" id="panel-questionnaire" role="tabpanel" hidden>
+    <h2 style="margin-top:0">Community questionnaire — help us build it (optional)</h2>
+    <p>LifeX is in development and this isn't medical advice. Your answers are used for product research and may be reported only as anonymized totals. Please don't share medical details. Adults 18+.</p>
+    <form id="questionnaire-form">
+      <label for="q1">1. What frustrates you most about today's health &amp; wellness apps and communities?</label>
+      <textarea id="q1" name="q1_frustration"></textarea>
 
-  <div class="dream">
-    <h2>Help shape it</h2>
-    <p>LifeX is in development, and the community is being built with the people who will use it. Follow along and tell us: what frustrates you most about today's health &amp; wellness apps and communities — and what would your dream community do differently?</p>
-    <p>
-      <a class="btn" href="https://www.instagram.com/lifexcommunity/">Join the conversation on Instagram</a>
-      <a class="btn secondary" href="https://www.threads.com/@lifexcommunity">Join on Threads</a>
-    </p>
+      <label for="q2">2. What would your dream community do differently?</label>
+      <textarea id="q2" name="q2_dream_community"></textarea>
+
+      <label>3. What do you most want to share?</label>
+      <label class="check"><input type="checkbox" name="q3_want_to_share" value="Your journey"> Your journey</label>
+      <label class="check"><input type="checkbox" name="q3_want_to_share" value="Cooking tips"> Cooking tips</label>
+      <label class="check"><input type="checkbox" name="q3_want_to_share" value="Product experiences"> Product experiences</label>
+      <label class="check"><input type="checkbox" name="q3_want_to_share" value="Something else"> Something else</label>
+
+      <label for="q4">4. What actually helps you stay consistent with healthy habits?</label>
+      <textarea id="q4" name="q4_stay_consistent"></textarea>
+
+      <label for="q5">5. What would make you trust a product or brand you meet in a community?</label>
+      <textarea id="q5" name="q5_trust"></textarea>
+
+      <label>6. What keeps you coming back?</label>
+      <label class="check"><input type="checkbox" name="q6_keeps_coming_back" value="Videos"> Videos</label>
+      <label class="check"><input type="checkbox" name="q6_keeps_coming_back" value="Cooking"> Cooking</label>
+      <label class="check"><input type="checkbox" name="q6_keeps_coming_back" value="Challenges"> Challenges</label>
+      <label class="check"><input type="checkbox" name="q6_keeps_coming_back" value="Honest reviews"> Honest reviews</label>
+
+      <label for="q7">7. Anything else you'd want LifeX to include?</label>
+      <textarea id="q7" name="q7_anything_else"></textarea>
+
+      <label for="q8">8. Email (optional) — if you're happy for us to follow up</label>
+      <input type="email" id="q8" name="email" autocomplete="email">
+
+      <p><button type="submit" class="btn">Send my answers</button></p>
+      <p class="formmsg" id="questionnaire-msg" role="status"></p>
+    </form>
   </div>
+</section>
 
-  <p class="note"><strong>Where things stand:</strong> LifeX is in development. There is nothing to buy or join yet beyond following along on Instagram and Threads — no products, no prices, and no launch date announced. When that changes, it will be announced on the profiles first.</p>
+<script>
+function showTab(name){
+  document.getElementById('panel-waitlist').hidden = name !== 'waitlist';
+  document.getElementById('panel-questionnaire').hidden = name !== 'questionnaire';
+  document.getElementById('tabbtn-waitlist').classList.toggle('active', name === 'waitlist');
+  document.getElementById('tabbtn-questionnaire').classList.toggle('active', name === 'questionnaire');
+}
+function collectForm(form){
+  var data = {};
+  var fd = new FormData(form);
+  fd.forEach(function(value, key){
+    if (data[key]) { data[key] = data[key] + ', ' + value; } else { data[key] = value; }
+  });
+  return data;
+}
+function submitLifeXForm(formId, msgId, subject){
+  var form = document.getElementById(formId);
+  var msg = document.getElementById(msgId);
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = collectForm(form);
+    data._subject = subject;
+    data._template = 'table';
+    data._captcha = 'false';
+    data._honey = '';
+    msg.textContent = 'Sending…';
+    fetch('https://formsubmit.co/ajax/ndabish@gmail.com', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){
+      if (!r.ok) throw new Error('submit failed');
+      form.reset();
+      msg.textContent = "Thank you — we'll be in touch. LifeX is in development, so updates come as we build.";
+    }).catch(function(){
+      msg.textContent = 'Something went wrong — please try again, or reach us on Instagram @lifexcommunity.';
+    });
+  });
+}
+submitLifeXForm('notify-form', 'notify-msg', 'LifeX notify signup');
+submitLifeXForm('questionnaire-form', 'questionnaire-msg', 'LifeX community questionnaire');
+</script>
 
-  <p>LifeX — a longevity, health &amp; wellness community, in development.</p>
+<footer>
+  <p>LifeX — a longevity, health &amp; wellness social network, community, and marketplace in development. Nothing is available to buy or join yet beyond following along; no price or opening date is promised. Educational only — not medical advice.</p>
+</footer>
 </body>
 </html>
